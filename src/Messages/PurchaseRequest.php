@@ -5,7 +5,7 @@ namespace Omnipay\StripeCheckout\Messages;
 class PurchaseRequest extends AbstractCheckoutRequest {
 
     private function nullIfEmpty(string $value = null) {
-        return empty($value) ? null : $value;
+        return empty ($value) ? null : $value;
     }
 
     public function getData() {
@@ -58,6 +58,7 @@ class PurchaseRequest extends AbstractCheckoutRequest {
         // We use Stripe's SDK to initialise a (Stripe) session. The session gets passed through the process and is
         // used to identify this transaction.
         \Stripe\Stripe::setApiKey($this->getApiKey());
+        \Stripe\Stripe::setApiVersion($this->getApiVersion());
 
         $session = \Stripe\Checkout\Session::create($data);
 

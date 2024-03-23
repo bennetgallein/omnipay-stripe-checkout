@@ -16,6 +16,15 @@ abstract class AbstractCheckoutRequest extends AbstractRequest {
     }
 
     /**
+     * return the api version to use with stripe
+     *
+     * @return string|null
+     */
+    public function getApiVersion(): string|null {
+        return $this->getParameter('apiVersion');
+    }
+
+    /**
      * Set the gateway API Key.
      *
      * @return AbstractRequest provides a fluent interface.

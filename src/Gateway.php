@@ -8,8 +8,17 @@ use Omnipay\StripeCheckout\Messages\PurchaseRequest;
 use Omnipay\StripeCheckout\Messages\RefundRequest;
 use Omnipay\Common\AbstractGateway;
 use Omnipay\Common\Message\RequestInterface;
+use Stripe\Stripe;
 
 class Gateway extends AbstractGateway {
+
+
+    public function getDefaultParameters() {
+        return [
+            'apiKey'     => '',
+            'apiVersion' => Stripe::getApiVersion()
+        ];
+    }
 
     /**
      * Get the gateway API Key (the "secret key").
@@ -18,6 +27,14 @@ class Gateway extends AbstractGateway {
      */
     public function getApiKey(): string {
         return $this->getParameter('apiKey');
+    }
+
+    public function setApiVersion($version) {
+        return $this->setParameter('apiVersion', $version);
+    }
+
+    public function getApiVersion(): string|null {
+        return $this->getParameter('apiVersion');
     }
 
     /**
