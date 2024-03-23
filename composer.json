@@ -1,5 +1,5 @@
 {
-  "name": "openticket/omnipay-stripe-checkout",
+  "name": "bennetgallein/omnipay-stripe-checkout",
   "type": "library",
   "description": "Payment Gateway driver for Stripe (Checkout)",
   "keywords": [
