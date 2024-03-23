@@ -30,7 +30,7 @@
     }
   },
   "require": {
-    "php": "^7",
+    "php": "^7|^8",
     "php-http/guzzle6-adapter": "^2.0",
     "omnipay/common": "^3.0",
     "stripe/stripe-php": "^7.75"
@@ -45,5 +45,10 @@
     "run-sa": "vendor/bin/phpstan analyse --ansi --no-progress -c phpstan.neon -l 4 src tests",
     "run-fixer": "vendor/bin/php-cs-fixer fix",
     "run-tests": "vendor/bin/phpunit"
+  },
+  "config": {
+    "allow-plugins": {
+      "php-http/discovery": true
+    }
   }
 }
