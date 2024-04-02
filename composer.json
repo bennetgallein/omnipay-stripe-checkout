@@ -38,9 +38,10 @@
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.0",
-    "mockery/mockery": "~0.8",
-    "omnipay/tests": "~2.0",
-    "php-coveralls/php-coveralls": "^1.0"
+    "mockery/mockery": "^1",
+    "omnipay/tests": "^4.0",
+    "php-coveralls/php-coveralls": "^1.0",
+    "http-interop/http-factory-guzzle": "^1.2"
   },
   "scripts": {
     "run-sa": "vendor/bin/phpstan analyse --ansi --no-progress -c phpstan.neon -l 4 src tests",

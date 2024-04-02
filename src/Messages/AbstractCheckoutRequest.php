@@ -33,6 +33,16 @@ abstract class AbstractCheckoutRequest extends AbstractRequest {
         return $this->setParameter('apiKey', $value);
     }
 
+    /**
+     * set the api version
+     *
+     * @param string $value
+     * @return AbstractRequest
+     */
+    public function setApiVersion($value): AbstractRequest {
+        return $this->setParameter('apiVersion', $value);
+    }
+
     public function getPaymentMethodTypes() {
         return $this->getParameter('paymentMethodTypes');
     }
